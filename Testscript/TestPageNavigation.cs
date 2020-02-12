@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SeleniumWebdriver.Testscript
@@ -18,6 +19,8 @@ namespace SeleniumWebdriver.Testscript
         public void OpenPage()
         {
             NavigationHelper.NavigationToURL(ObjectRepository.Config.GetWebsite());
+            Thread.Sleep(500);
+            Console.WriteLine("Title of page: {0}", WindowHelper.GetTitle());
         }
 
     }

@@ -12,24 +12,45 @@ namespace SeleniumWebdriver.BaseClasses
     [TestClass]
     public class BaseClass
     {
+        private static ChromeOptions GetChromeOptions()
+        {
+            ChromeOptions option = new ChromeOptions();
+            option.AddArgument("start-maximized");
+            //option.AddExtension(@"")
+            return option;
+        }
+        private static InternetExplorerOptions GetInternetExplorerOptions()
+        {
+            InternetExplorerOptions option = new InternetExplorerOptions();
+            option.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
+            option.EnsureCleanSession = true;
+            return option;
+        }
+
+        private static FirefoxOptions GetFirefoxOptions()
+        {
+            FirefoxOptions options = new FirefoxOptions();
+            //Add options here
+            return options;
+        }
         private static IWebDriver GetFirefoxDriver()
         {
-            IWebDriver driver = new FirefoxDriver();
+            IWebDriver driver = new FirefoxDriver(GetFirefoxOptions());
             return driver;
         }
         private static IWebDriver GetChromeDriver()
         {
-            IWebDriver driver = new ChromeDriver();
+            IWebDriver driver = new ChromeDriver(GetChromeOptions());
             return driver;
         }
         private static IWebDriver GetIExplorerDriver()
         {
-            IWebDriver driver = new InternetExplorerDriver();
+            IWebDriver driver = new InternetExplorerDriver(GetInternetExplorerOptions());
             return driver;
         }
 
         [AssemblyInitialize]
-        public static void InitWebdriver(TestContext tx)
+        public static void InitWebdriver(TestContext tc)
         {
             ObjectRepository.Config = new AppConfigReader();
             switch (ObjectRepository.Config.GetBrowser())
