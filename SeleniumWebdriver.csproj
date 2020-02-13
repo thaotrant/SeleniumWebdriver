@@ -70,7 +70,8 @@
     <Compile Include="Interfaces\IConfig.cs" />
     <Compile Include="Settings\AppConfigKeys.cs" />
     <Compile Include="Settings\ObjectRepository.cs" />
-    <Compile Include="Testscript\TestPageNavigation.cs" />
+    <Compile Include="Testscript\PageNavigation\TestPageNavigation.cs" />
+    <Compile Include="Testscript\WebElement\TestWebElement.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
