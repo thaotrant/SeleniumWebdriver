@@ -14,8 +14,7 @@ D:\Git\SeleniumWebdriver\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFrame
 D:\Git\SeleniumWebdriver\bin\Debug\Option.xml
 D:\Git\SeleniumWebdriver\bin\Debug\WebDriver.xml
 D:\Git\SeleniumWebdriver\bin\Debug\WebDriver.Support.xml
-D:\Git\SeleniumWebdriver\obj\Debug\SeleniumWebdriver.csprojAssemblyReference.cache
-D:\Git\SeleniumWebdriver\obj\Debug\SeleniumWebdriver.csproj.CoreCompileInputs.cache
 D:\Git\SeleniumWebdriver\obj\Debug\SeleniumWebdriver.csproj.CopyComplete
 D:\Git\SeleniumWebdriver\obj\Debug\SeleniumWebdriver.dll
 D:\Git\SeleniumWebdriver\obj\Debug\SeleniumWebdriver.pdb
+D:\Git\SeleniumWebdriver\obj\Debug\SeleniumWebdriver.csprojAssemblyReference.cache
