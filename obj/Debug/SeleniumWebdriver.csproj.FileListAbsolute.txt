@@ -18,3 +18,4 @@ D:\Git\SeleniumWebdriver\obj\Debug\SeleniumWebdriver.csproj.CopyComplete
 D:\Git\SeleniumWebdriver\obj\Debug\SeleniumWebdriver.dll
 D:\Git\SeleniumWebdriver\obj\Debug\SeleniumWebdriver.pdb
 D:\Git\SeleniumWebdriver\obj\Debug\SeleniumWebdriver.csprojAssemblyReference.cache
+D:\Git\SeleniumWebdriver\obj\Debug\SeleniumWebdriver.csproj.CoreCompileInputs.cache

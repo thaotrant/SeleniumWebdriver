@@ -63,6 +63,7 @@
     <Compile Include="BaseClasses\BaseClass.cs" />
     <Compile Include="ComponentHelper\ButtonHelper.cs" />
     <Compile Include="ComponentHelper\CheckboxHelper.cs" />
+    <Compile Include="ComponentHelper\DropdownListHelper.cs" />
     <Compile Include="ComponentHelper\GenericHelpers.cs" />
     <Compile Include="ComponentHelper\LinkHelper.cs" />
     <Compile Include="ComponentHelper\NavigationHelper.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Configuration\XmlReader.cs" />
     <Compile Include="CustomException\NoSuitableDriverFound.cs" />
     <Compile Include="Testscript\CheckBox\TestCheckBox.cs" />
+    <Compile Include="Testscript\DropdownListHandle\DropdownListHandle.cs" />
     <Compile Include="Testscript\HandleButton\HandleButton.cs" />
     <Compile Include="Testscript\HyperLinks\TestHyperLinks.cs" />
     <Compile Include="Interfaces\IConfig.cs" />
@@ -81,6 +83,7 @@
     <Compile Include="Settings\ObjectRepository.cs" />
     <Compile Include="Testscript\PageNavigation\TestPageNavigation.cs" />
     <Compile Include="Testscript\RadioButton\HandleRadioButton.cs" />
+    <Compile Include="Testscript\RadioButton\TestMultiElement.cs" />
     <Compile Include="Testscript\TextBox\TestTextBox.cs" />
     <Compile Include="Testscript\WebElement\TestWebElement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
