@@ -10,6 +10,7 @@ namespace SeleniumWebdriver.Configuration
     {
         Firefox,
         Chrome,
-        IExplorer
+        IExplorer,
+        PhantomJs
     }
 }

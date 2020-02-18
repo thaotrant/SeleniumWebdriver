@@ -37,7 +37,7 @@ namespace SeleniumWebdriver.Testscript.TestWebElement
             }
             catch (NoSuchElementException ex)
             {
-                Console.WriteLine("No element found");
+                Console.WriteLine("No element found" + ex.ToString());
             }
             
         }

@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.Extensions;
 using SeleniumWebdriver.Settings;
 using System;
 using System.Collections.Generic;
@@ -29,5 +30,18 @@ namespace SeleniumWebdriver.ComponentHelper
             else
                 throw new NoSuchElementException("Element Not Found: " + locator.ToString());
         }
+
+        public static void TakeScreenShot(String filename = "Screen")
+        {
+            Screenshot screenshot = ObjectRepository.Driver.TakeScreenshot();
+            if(filename.Equals("Screen"))
+            {
+                filename = filename + DateTime.UtcNow.ToString("yyyy-MM-dd-mm-ss") + ".jpeg";
+                screenshot.SaveAsFile(filename, ScreenshotImageFormat.Jpeg);
+                return;
+            }
+            screenshot.SaveAsFile(filename, ScreenshotImageFormat.Jpeg);
+        }
+
     }
 }

@@ -3,9 +3,11 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
+using SeleniumWebdriver.ComponentHelper;
 using SeleniumWebdriver.Configuration;
 using SeleniumWebdriver.CustomException;
 using SeleniumWebdriver.Settings;
+using System;
 
 namespace SeleniumWebdriver.BaseClasses
 {
@@ -26,6 +28,9 @@ namespace SeleniumWebdriver.BaseClasses
             option.EnsureCleanSession = true;
             return option;
         }
+
+        //Phantom JS does not support from VS 2017
+        //private static PhantomJSDriver GetPhantomJs()
 
         private static FirefoxOptions GetFirefoxOptions()
         {
@@ -71,6 +76,10 @@ namespace SeleniumWebdriver.BaseClasses
                     throw new NoSuitableDriverFound("No suitable driver found for {0}" + ObjectRepository.Config.GetBrowser());
                    
             }
+            NavigationHelper.NavigationToURL(ObjectRepository.Config.GetWebsite());
+            //PageLoad is the timeout when loading a page
+            ObjectRepository.Driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(ObjectRepository.Config.GetPageLoadTimeout());
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(ObjectRepository.Config.GetElementLoadTimeout());
         }
         [AssemblyCleanup]
         public static void TearDown()

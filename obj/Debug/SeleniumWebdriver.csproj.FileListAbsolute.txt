@@ -19,3 +19,4 @@ D:\Git\SeleniumWebdriver\obj\Debug\SeleniumWebdriver.dll
 D:\Git\SeleniumWebdriver\obj\Debug\SeleniumWebdriver.pdb
 D:\Git\SeleniumWebdriver\obj\Debug\SeleniumWebdriver.csprojAssemblyReference.cache
 D:\Git\SeleniumWebdriver\obj\Debug\SeleniumWebdriver.csproj.CoreCompileInputs.cache
+D:\Git\SeleniumWebdriver\bin\Debug\phantomjs-license.txt

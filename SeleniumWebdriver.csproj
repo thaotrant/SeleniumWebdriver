@@ -84,7 +84,10 @@
     <Compile Include="Testscript\PageNavigation\TestPageNavigation.cs" />
     <Compile Include="Testscript\RadioButton\HandleRadioButton.cs" />
     <Compile Include="Testscript\RadioButton\TestMultiElement.cs" />
+    <Compile Include="Testscript\ScreenShotHandler\TakeScreenShots.cs" />
     <Compile Include="Testscript\TextBox\TestTextBox.cs" />
+    <Compile Include="Testscript\WebDriverWait\TestWebDriverWait.cs" />
+    <Compile Include="Testscript\WebElement\HandleElements.cs" />
     <Compile Include="Testscript\WebElement\TestWebElement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -97,6 +100,12 @@
   <ItemGroup>
     <Folder Include="ExcelReader\" />
     <Folder Include="PageObject\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages\PhantomJS.2.1.1\tools\phantomjs\phantomjs.exe" />
+    <Content Include="phantomjs-license.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
