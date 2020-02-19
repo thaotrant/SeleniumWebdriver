@@ -30,6 +30,6 @@ namespace SeleniumWebdriver.ComponentHelper
             selectElement = new SelectElement(ObjectRepository.Driver.FindElement(locator));
             return selectElement.Options.Select((x => x.Text)).ToList();
         }
-        WebDriverWait
+        
     }
 }
