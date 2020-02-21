@@ -74,7 +74,9 @@
     <Compile Include="Configuration\BrowserType.cs" />
     <Compile Include="Configuration\XmlReader.cs" />
     <Compile Include="CustomException\NoSuitableDriverFound.cs" />
+    <Compile Include="Testscript\BrowserActions\TestBrowserAction.cs" />
     <Compile Include="Testscript\CheckBox\TestCheckBox.cs" />
+    <Compile Include="Testscript\DefaultWait\HandleDefaultWait.cs" />
     <Compile Include="Testscript\DropdownListHandle\DropdownListHandle.cs" />
     <Compile Include="Testscript\HandleButton\HandleButton.cs" />
     <Compile Include="Testscript\HyperLinks\TestHyperLinks.cs" />

@@ -1,11 +1,7 @@
 ﻿using SeleniumWebdriver.Interfaces;
 using SeleniumWebdriver.Settings;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SeleniumWebdriver.Configuration
 {
@@ -13,7 +9,7 @@ namespace SeleniumWebdriver.Configuration
     {
         public BrowserType GetBrowser()
         {
-            string browser =  ConfigurationManager.AppSettings.Get(AppConfigKeys.BROWSER);
+            string browser = ConfigurationManager.AppSettings.Get(AppConfigKeys.BROWSER);
             return (BrowserType)Enum.Parse(typeof(BrowserType), browser);
         }
 

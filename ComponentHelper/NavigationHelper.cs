@@ -1,10 +1,4 @@
-﻿using OpenQA.Selenium;
-using SeleniumWebdriver.Settings;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SeleniumWebdriver.Settings;
 
 namespace SeleniumWebdriver.ComponentHelper
 {
@@ -12,7 +6,7 @@ namespace SeleniumWebdriver.ComponentHelper
     {
         public static void NavigationToURL(string url)
         {
-           ObjectRepository.Driver.Navigate().GoToUrl(url);
+            ObjectRepository.Driver.Navigate().GoToUrl(url);
         }
     }
 }

@@ -1,9 +1,4 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SeleniumWebdriver.ComponentHelper
 {
@@ -26,7 +21,7 @@ namespace SeleniumWebdriver.ComponentHelper
             if (element.GetAttribute("value") == null)
                 return string.Empty;
             else
-            return element.GetAttribute("value");
-        }        
+                return element.GetAttribute("value");
+        }
     }
 }

@@ -4,10 +4,7 @@ using SeleniumWebdriver.ComponentHelper;
 using SeleniumWebdriver.Settings;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace SeleniumWebdriver.Testscript.DropdownListHandle
 {
@@ -36,7 +33,7 @@ namespace SeleniumWebdriver.Testscript.DropdownListHandle
                 DropdownListHelper.SelectElement(By.Id("bug_severity"), "minor");
 
                 IList<string> getAllOptions = DropdownListHelper.GetAllItems(By.Id("bug_severity"));
-                foreach(string var in getAllOptions)
+                foreach (string var in getAllOptions)
                 {
                     Console.WriteLine(var);
                 }

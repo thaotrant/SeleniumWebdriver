@@ -4,10 +4,6 @@ using OpenQA.Selenium.Support.UI;
 using SeleniumWebdriver.ComponentHelper;
 using SeleniumWebdriver.Settings;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SeleniumWebdriver.Testscript.WebDriverWaiter
 
@@ -32,10 +28,23 @@ namespace SeleniumWebdriver.Testscript.WebDriverWaiter
             wait.PollingInterval = TimeSpan.FromMilliseconds(250);
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(ElementNotVisibleException));
             wait.Until(WaitForElement()).SendKeys("Health");
-            ButtonHelper.ClickOnButton(By.CssSelector(".udlite-search-form-autocomplete-input-group-reversed > button:nth-child(2)"));
+            ButtonHelper.ClickOnButton(By.CssSelector(".notice-streamer .input-group-btn .btn-link"));
             wait.Until(WaitForLastElement()).Click();
             Console.WriteLine(wait.Until(WaitForPageTitle()));
         }
+
+        [TestMethod]
+        public void TestExpCondition()
+        {
+            NavigationHelper.NavigationToURL("https://www.udemy.com/");
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
+            WebDriverWait wait = new WebDriverWait(ObjectRepository.Driver, TimeSpan.FromSeconds(50));
+            wait.PollingInterval = TimeSpan.FromMilliseconds(250);
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(ElementNotVisibleException));
+            wait.Until(ExpectedConditions.ElementExists(By.Id("search-field-home"))).SendKeys("HTML");
+            ButtonHelper.ClickOnButton(By.XPath("//button[@type='submit']"));
+        }
+
 
         private Func<IWebDriver, bool> WaitForSearchBox()
         {
@@ -60,8 +69,8 @@ namespace SeleniumWebdriver.Testscript.WebDriverWaiter
             return ((x) =>
             {
                 Console.WriteLine("Waiting for element");
-                if(x.FindElements(By.CssSelector("#header-desktop-search-bar")).Count == 1)
-                    return x.FindElement(By.CssSelector("#header-desktop-search-bar"));
+                if (x.FindElements(By.Id("search-field-home")).Count == 1)
+                    return x.FindElement(By.Id("search-field-home"));
                 return null;
             });
         }

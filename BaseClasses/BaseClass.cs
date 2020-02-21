@@ -74,7 +74,7 @@ namespace SeleniumWebdriver.BaseClasses
 
                 default:
                     throw new NoSuitableDriverFound("No suitable driver found for {0}" + ObjectRepository.Config.GetBrowser());
-                   
+
             }
             NavigationHelper.NavigationToURL(ObjectRepository.Config.GetWebsite());
             //PageLoad is the timeout when loading a page

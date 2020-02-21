@@ -1,15 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
-using SeleniumWebdriver.BaseClasses;
 using SeleniumWebdriver.ComponentHelper;
-using SeleniumWebdriver.Configuration;
 using SeleniumWebdriver.Settings;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SeleniumWebdriver.Testscript.TestWebElement
 {
@@ -39,7 +34,7 @@ namespace SeleniumWebdriver.Testscript.TestWebElement
             {
                 Console.WriteLine("No element found" + ex.ToString());
             }
-            
+
         }
     }
 }
