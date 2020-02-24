@@ -80,6 +80,7 @@ namespace SeleniumWebdriver.BaseClasses
             //PageLoad is the timeout when loading a page
             ObjectRepository.Driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(ObjectRepository.Config.GetPageLoadTimeout());
             ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(ObjectRepository.Config.GetElementLoadTimeout());
+            BrowserHelper.BrowserMaximize();
         }
         [AssemblyCleanup]
         public static void TearDown()

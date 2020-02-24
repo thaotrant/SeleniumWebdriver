@@ -16,12 +16,11 @@ namespace SeleniumWebdriver.Testscript.BrowserActions
         [TestMethod]
         public void TestActions()
         {
-            NavigationHelper.NavigationToURL("localhost:5001/enter_bug.cgi");
-            ObjectRepository.Driver.Manage().Window.Maximize();
-            ButtonHelper.ClickOnButton(By.LinkText("create a new account"));
-            ObjectRepository.Driver.Navigate().Back();
-            ObjectRepository.Driver.Navigate().Forward();
-            ObjectRepository.Driver.Navigate().Refresh();
+            //NavigationHelper.NavigationToURL("localhost:5001/enter_bug.cgi");
+            ButtonHelper.ClickOnButton(By.LinkText("Open a New Account"));
+            BrowserHelper.GoBack();
+            BrowserHelper.GoForward();
+            BrowserHelper.RefreshPage();
         }
     }
 }
