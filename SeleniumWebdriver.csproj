@@ -66,6 +66,7 @@
     <Compile Include="ComponentHelper\CheckboxHelper.cs" />
     <Compile Include="ComponentHelper\DropdownListHelper.cs" />
     <Compile Include="ComponentHelper\GenericHelpers.cs" />
+    <Compile Include="ComponentHelper\JavaScriptPopupHelper.cs" />
     <Compile Include="ComponentHelper\LinkHelper.cs" />
     <Compile Include="ComponentHelper\NavigationHelper.cs" />
     <Compile Include="ComponentHelper\RadioButtonHelper.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Settings\ObjectRepository.cs" />
     <Compile Include="Testscript\MultipleBrowsers\TestMultipleBrowserWindows.cs" />
     <Compile Include="Testscript\PageNavigation\TestPageNavigation.cs" />
+    <Compile Include="Testscript\Popup\TestPopup.cs" />
     <Compile Include="Testscript\RadioButton\HandleRadioButton.cs" />
     <Compile Include="Testscript\RadioButton\TestMultiElement.cs" />
     <Compile Include="Testscript\ScreenShotHandler\TakeScreenShots.cs" />
