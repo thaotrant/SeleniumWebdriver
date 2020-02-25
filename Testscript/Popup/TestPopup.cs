@@ -44,6 +44,34 @@ namespace SeleniumWebdriver.Testscript.Popup
             return executor.ExecuteScript(script);
 
         }
-        
+        [TestMethod]
+        public void TestConfirmPopup()
+        {
+            NavigationHelper.NavigationToURL("https://www.w3schools.com/js/tryit.asp?filename=tryjs_confirm");
+            ObjectRepository.Driver.SwitchTo().Frame(ObjectRepository.Driver.FindElement(By.Id("iframeResult")));
+            ButtonHelper.ClickOnButton(By.XPath("//button[text()='Try it']"));
+            JavaScriptPopupHelper.ClickOKonPopup();
+            ButtonHelper.ClickOnButton(By.XPath("//button[text()='Try it']"));
+            JavaScriptPopupHelper.ClickCancelOnPopup();
+
+        }
+        [TestMethod]
+        public void TestPromp()
+        {
+            NavigationHelper.NavigationToURL("https://www.w3schools.com/js/tryit.asp?filename=tryjs_prompt");
+            ObjectRepository.Driver.SwitchTo().Frame(ObjectRepository.Driver.FindElement(By.Id("iframeResult")));
+            ButtonHelper.ClickOnButton(By.XPath("//button[text()='Try it']"));
+            var popupText = JavaScriptPopupHelper.GetPopupText();
+            //IAlert promp = ObjectRepository.Driver.SwitchTo().Alert();
+            //promp.SendKeys("Thao");
+            //promp.Accept();
+            JavaScriptPopupHelper.SendKeys(popupText);
+            JavaScriptPopupHelper.ClickOKonPopup();
+
+            //ButtonHelper.ClickOnButton(By.XPath("//button[text()='Try it']"));
+            //promp = ObjectRepository.Driver.SwitchTo().Alert();
+            //promp.SendKeys("Thao123");
+            //promp.Dismiss();
+        }
     }
 }

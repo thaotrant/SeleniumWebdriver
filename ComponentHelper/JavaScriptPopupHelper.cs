@@ -34,6 +34,18 @@ namespace SeleniumWebdriver.ComponentHelper
                 return;
             ObjectRepository.Driver.SwitchTo().Alert().Accept();
         }
-        
+        public static void ClickCancelOnPopup()
+        {
+            if (!IsPopupPresent())
+                return;
+            ObjectRepository.Driver.SwitchTo().Alert().Dismiss();
+        }
+
+        public static void SendKeys(string text)
+        {
+            if (!IsPopupPresent())
+                return;
+            ObjectRepository.Driver.SwitchTo().Alert().SendKeys(text);
+        }
     }
 }
