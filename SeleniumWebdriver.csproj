@@ -85,6 +85,7 @@
     <Compile Include="Interfaces\IConfig.cs" />
     <Compile Include="Settings\AppConfigKeys.cs" />
     <Compile Include="Settings\ObjectRepository.cs" />
+    <Compile Include="Testscript\MouseActions\TestMouseActions.cs" />
     <Compile Include="Testscript\MultipleBrowsers\TestMultipleBrowserWindows.cs" />
     <Compile Include="Testscript\PageNavigation\TestPageNavigation.cs" />
     <Compile Include="Testscript\Popup\TestPopup.cs" />
