@@ -68,6 +68,20 @@ namespace SeleniumWebdriver.ComponentHelper
             ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(ObjectRepository.Config.GetElementLoadTimeout());
             return flag;
         }
+
+        public static WebDriverWait GetWebDriverWait(TimeSpan timeout)
+        {
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
+            //đó là cách viết gọn của việc thay vì set value for each property thì gom chung lại set values cho cả đám trong 1 statement
+            //Instead of code wait.PollingInterval = TimeSpan.FromMilliseconds(200);
+            WebDriverWait wait = new WebDriverWait(ObjectRepository.Driver, timeout)
+            {
+                PollingInterval = TimeSpan.FromMilliseconds(500),
+            };            
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(ElementNotVisibleException));
+            return wait;
+        }
+                
         private static Func<IWebDriver, IWebElement> WaitForElementFuncInPage(By locator)
         {
             return ((x) =>
@@ -77,5 +91,9 @@ namespace SeleniumWebdriver.ComponentHelper
                 return null;
             });
         }
+        
+        //on FF, CTR + T: open new tab
+        //Ctr + Shift + A: Open Addons
+        //Alt + F: Open File menu
     }
 }

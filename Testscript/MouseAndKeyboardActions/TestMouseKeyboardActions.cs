@@ -10,10 +10,10 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SeleniumWebdriver.Testscript.MouseActions
+namespace SeleniumWebdriver.Testscript.MouseAndKeyboardActions
 {
     [TestClass]
-    public class TestMouseActions
+    public class TestMouseKeyboardActions
     {
         [TestMethod]
         public void TestContextClick()
@@ -58,6 +58,51 @@ namespace SeleniumWebdriver.Testscript.MouseActions
 
             Thread.Sleep(1000);
             
+        }
+        [TestMethod]
+        public void TestKeyboardActions()
+        {
+            //Some change in the WebDriver so that this kind of action does not work. 
+            //Will be investigated
+            NavigationHelper.NavigationToURL(ObjectRepository.Config.GetWebsite());
+            Actions actions = new Actions(ObjectRepository.Driver);
+            // ctrl + t
+            //actions.KeyDown(Keys.LeftControl)
+            //    .SendKeys("t")
+            //    .KeyUp(Keys.LeftControl)
+            //    .Build()
+            //    .Perform();
+            
+            // ctrl + shift +a
+
+            //act.KeyDown(Keys.LeftControl)
+            //    .KeyDown(Keys.LeftShift)
+            //    .SendKeys("a")
+            //    .KeyUp(Keys.LeftShift)
+            //    .KeyUp(Keys.LeftControl)
+            //    .Build()
+            //    .Perform();
+
+            // alt + f + x
+
+            //act.KeyDown(Keys.LeftAlt)
+            //    .SendKeys("f")
+            //    .SendKeys("x")
+            //    .Build()
+            //    .Perform();
+
+            var ele1 = ObjectRepository.Driver.FindElement(By.Id("quicksearch_top"));
+            var ele2 = ObjectRepository.Driver.FindElement(By.Id("quicksearch_main"));
+
+            actions.SendKeys(ele1, "f").SendKeys(ele1, "x").Build().Perform();
+
+            actions.KeyDown(ele2, Keys.Shift)
+                .SendKeys(ele2, "fx")                
+                .KeyUp(Keys.Shift)
+                .Build()
+                .Perform();
+            
+            Thread.Sleep(2000);
         }
     }
 }
