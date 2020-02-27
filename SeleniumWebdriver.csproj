@@ -76,6 +76,9 @@
     <Compile Include="Configuration\BrowserType.cs" />
     <Compile Include="Configuration\XmlReader.cs" />
     <Compile Include="CustomException\NoSuitableDriverFound.cs" />
+    <Compile Include="PageObject\BugDetail.cs" />
+    <Compile Include="PageObject\HomePage.cs" />
+    <Compile Include="PageObject\LoginPage.cs" />
     <Compile Include="Testscript\AutoSuggestion\TestAutoSuggestion.cs" />
     <Compile Include="Testscript\BrowserActions\TestBrowserAction.cs" />
     <Compile Include="Testscript\CheckBox\TestCheckBox.cs" />
@@ -90,6 +93,7 @@
     <Compile Include="Testscript\MouseAndKeyboardActions\TestMouseKeyboardActions.cs" />
     <Compile Include="Testscript\MultipleBrowsers\TestMultipleBrowserWindows.cs" />
     <Compile Include="Testscript\PageNavigation\TestPageNavigation.cs" />
+    <Compile Include="Testscript\PageObject\TestPageObject.cs" />
     <Compile Include="Testscript\Popup\TestPopup.cs" />
     <Compile Include="Testscript\RadioButton\HandleRadioButton.cs" />
     <Compile Include="Testscript\RadioButton\TestMultiElement.cs" />
@@ -108,7 +112,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ExcelReader\" />
-    <Folder Include="PageObject\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages\PhantomJS.2.1.1\tools\phantomjs\phantomjs.exe" />

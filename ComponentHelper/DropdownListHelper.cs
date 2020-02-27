@@ -27,6 +27,10 @@ namespace SeleniumWebdriver.ComponentHelper
             selectElement = new SelectElement(ObjectRepository.Driver.FindElement(locator));
             return selectElement.Options.Select((x => x.Text)).ToList();
         }
-
+        public static void SelectElement(IWebElement element, string visibleText)
+        {
+            selectElement = new SelectElement(element);
+            selectElement.SelectByValue(visibleText);
+        }
     }
 }

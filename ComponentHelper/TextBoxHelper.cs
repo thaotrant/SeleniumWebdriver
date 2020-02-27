@@ -16,5 +16,15 @@ namespace SeleniumWebdriver.ComponentHelper
             element = GenericHelpers.GetElement(locator);
             element.Clear();
         }
+
+        public static void ClearTextbox(IWebElement element)
+        {
+            element.Clear();
+        }
+        public static void TypeInTextbox(IWebElement element, string text)
+        {          
+            element.Clear();
+            element.SendKeys(text);
+        }
     }
 }
