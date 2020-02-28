@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using SeleniumWebdriver.BaseClasses;
 using SeleniumWebdriver.Settings;
 using System;
 using System.Collections.Generic;
@@ -9,8 +10,9 @@ using System.Threading.Tasks;
 
 namespace SeleniumWebdriver.PageObject
 {
-    public class LoginPage
+    public class LoginPage : PageBase
     {
+        private IWebDriver _driver;
         #region WebElements
         [FindsBy(How = How.Id, Using = "Bugzilla_login")]
         private IWebElement loginField;
@@ -19,6 +21,7 @@ namespace SeleniumWebdriver.PageObject
         private IWebElement passwordField;
 
         [FindsBy(How = How.Id, Using = "log_in")]
+        [CacheLookup] //using for link and button for faster
         private IWebElement loginButton;
 
         [FindsBy(How = How.XPath, Using = "//div[@id='header']/descendant::a[text()='Home']")]
@@ -29,9 +32,9 @@ namespace SeleniumWebdriver.PageObject
         //private By loginButton = By.Id("log_in");
         //private By homeLink = By.XPath("//div[@id='header']/descendant::a[text()='Home']");
         #endregion
-        public LoginPage()
+        public LoginPage(IWebDriver driver) : base(driver)
         {
-            PageFactory.InitElements(ObjectRepository.Driver, this);
+            this._driver = driver;
         }
         #region Actions
         public BugDetail LoginToPage(string username, string password)
@@ -39,15 +42,10 @@ namespace SeleniumWebdriver.PageObject
             loginField.SendKeys(username);
             passwordField.SendKeys(password);
             loginButton.Click();
-            return new BugDetail();
+            return new BugDetail(_driver);      
         }
         #endregion
-        #region
-        public HomePage NavigateToHomePage()
-        {
-            homeLink.Click();
-            return new HomePage();
-        }
+        #region       
 
         #endregion
     }

@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseClasses\BaseClass.cs" />
+    <Compile Include="BaseClasses\PageBase.cs" />
     <Compile Include="ComponentHelper\BrowserHelper.cs" />
     <Compile Include="ComponentHelper\ButtonHelper.cs" />
     <Compile Include="ComponentHelper\CheckboxHelper.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Testscript\AutoSuggestion\TestAutoSuggestion.cs" />
     <Compile Include="Testscript\BrowserActions\TestBrowserAction.cs" />
     <Compile Include="Testscript\CheckBox\TestCheckBox.cs" />
+    <Compile Include="Testscript\DataDriven\TestCreateBug.cs" />
     <Compile Include="Testscript\DefaultWait\HandleDefaultWait.cs" />
     <Compile Include="Testscript\DropdownListHandle\DropdownListHandle.cs" />
     <Compile Include="Testscript\HandleButton\HandleButton.cs" />

@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium;
+using SeleniumWebdriver.ComponentHelper;
 using SeleniumWebdriver.PageObject;
 using SeleniumWebdriver.Settings;
 using System;
@@ -8,20 +8,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SeleniumWebdriver.Testscript.PageObject
+namespace SeleniumWebdriver.Testscript.DataDriven
 {
     [TestClass]
-    public class TestPageObject
+    public class TestCreateBug
     {
         [TestMethod]
-        public void POMTest()
+        public void CreateABug()
         {
+            NavigationHelper.NavigationToURL(ObjectRepository.Config.GetWebsite());
             HomePage hPage = new HomePage(ObjectRepository.Driver);
             LoginPage loginPage = hPage.NavigateToLogin();
             BugDetail bugDetail = loginPage.LoginToPage(ObjectRepository.Config.GetUsername(), ObjectRepository.Config.GetPassword());
             bugDetail.SelectDropdownList("minor", "Other", "Linux");
             bugDetail.FillInTextbox("summary", "description");
-            bugDetail.Logout();
+            bugDetail.SubmitBug();
+            hPage = bugDetail.Logout();
         }
     }
 }

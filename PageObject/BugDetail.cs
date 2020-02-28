@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using SeleniumWebdriver.BaseClasses;
 using SeleniumWebdriver.ComponentHelper;
 using SeleniumWebdriver.Settings;
 using System;
@@ -10,52 +11,77 @@ using System.Threading.Tasks;
 
 namespace SeleniumWebdriver.PageObject
 {
-    public class BugDetail
+    public class BugDetail : PageBase
     {
+        private IWebDriver _driver;
         #region WebElements
         [FindsBy(How = How.Id, Using = "bug_severity")]
         private IWebElement severityDropdown;
 
+        [FindsBy(How = How.Id, Using = "rep_platform")]
+        private IWebElement hardwareDropdown;
+
+        [FindsBy(How = How.Id, Using = "op_sys")]
+        private IWebElement osDropdown;
+
         [FindsBy(How = How.Id, Using = "short_desc")]
-        private IWebElement summary;
+        private IWebElement summaryTextbox;
 
         [FindsBy(How = How.Id, Using = "comment")]
-        private IWebElement description;
+        private IWebElement descriptionTextbox;
 
-        [FindsBy(How = How.XPath, Using = "//div[@id='header']/descendant::a[text()='Home']")]
-        private IWebElement homeLink;
+        [FindsBy(How = How.Id, Using = "commit")]
+        private IWebElement submitButton;
+       
 
         //private By severityDropdown = By.Id("bug_severity");
         //private By summary = By.Id("short_desc");        
         //private By description = By.Id("comment");
         //private By homeLink = By.XPath("//div[@id='header']/descendant::a[text()='Home']");
-
-        public IWebElement Summary { get { return summary; } }
-        public IWebElement Description { get { return description; }}
+        
         #endregion
-        public BugDetail()
+        public BugDetail(IWebDriver driver) : base(driver)
         {
-            PageFactory.InitElements(ObjectRepository.Driver, this);
+            this._driver = driver;
         }
 
         #region Actions
-        public void SelectSeverity(string text)
+        public void SelectDropdownList(string severity = null, string hardware = null, string os = null)
         {
-            DropdownListHelper.SelectElement(severityDropdown, "minor");
+            if(severity != null)
+                DropdownListHelper.SelectElement(severityDropdown, severity);
+            if (hardware != null)
+                DropdownListHelper.SelectElement(hardwareDropdown, hardware);
+            if (os != null)
+                DropdownListHelper.SelectElement(osDropdown, os);
         }
-        public void FillTextBox(IWebElement element, string text)
+        public void FillInTextbox(string summary = null, string description = null)
         {
-            TextBoxHelper.ClearTextbox(element);
-            TextBoxHelper.TypeInTextbox(element, text);
-        }        
+            if (summary != null)
+            {
+                TextBoxHelper.ClearTextbox(summaryTextbox);
+                TextBoxHelper.TypeInTextbox(summaryTextbox, summary);
+            }
+            if (description != null)
+            {
+                TextBoxHelper.ClearTextbox(descriptionTextbox);
+                TextBoxHelper.TypeInTextbox(descriptionTextbox, description);
+            }
+        }
+        
+        public void SubmitBug()
+        {
+            submitButton.Click();
+            GenericHelpers.WaitForElementInPage(By.Id("bugzilla-body"), TimeSpan.FromSeconds(30));
+        }
         #endregion
 
         #region Navigation
-        public HomePage NavigationToHomePage()
+        public HomePage Logout()
         {
-            homeLink.Click();
-            return new HomePage();
-        }
+            base.Logout();
+            return new HomePage(_driver);
+        }        
         #endregion
     }
 }

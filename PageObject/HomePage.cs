@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using SeleniumWebdriver.BaseClasses;
 using SeleniumWebdriver.ComponentHelper;
 using SeleniumWebdriver.Settings;
 using System;
@@ -10,8 +11,9 @@ using System.Threading.Tasks;
 
 namespace SeleniumWebdriver.PageObject
 {
-    public class HomePage
+    public class HomePage : PageBase
     {
+        private IWebDriver _driver;
         #region WebElements
         [FindsBy(How = How.Id, Using = "quicksearch_top")]
         private IWebElement quickSearchBox;
@@ -28,9 +30,9 @@ namespace SeleniumWebdriver.PageObject
         //private By searchLink = By.CssSelector(".bz_common_actions #query");
         #endregion
 
-        public HomePage()
+        public HomePage(IWebDriver driver) : base(driver) 
         {
-            PageFactory.InitElements(ObjectRepository.Driver, this);
+            this._driver = driver;
         }
         #region Actions
         public void QuickSearch(string searchText)
@@ -44,7 +46,7 @@ namespace SeleniumWebdriver.PageObject
         public LoginPage NavigateToLogin()
         {
             fileABugLink.Click();
-            return new LoginPage();
+            return new LoginPage(_driver);
         }
         #endregion
     }
