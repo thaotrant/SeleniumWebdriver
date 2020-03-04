@@ -51,6 +51,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
@@ -100,6 +101,7 @@
     <Compile Include="Testscript\RadioButton\HandleRadioButton.cs" />
     <Compile Include="Testscript\RadioButton\TestMultiElement.cs" />
     <Compile Include="Testscript\ScreenShotHandler\TakeScreenShots.cs" />
+    <Compile Include="Testscript\TestClassContext\TestClassContext.cs" />
     <Compile Include="Testscript\TextBox\TestTextBox.cs" />
     <Compile Include="Testscript\WebDriverWaiter\TestWebDriverWait.cs" />
     <Compile Include="Testscript\WebElement\HandleElements.cs" />
