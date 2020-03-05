@@ -22,7 +22,34 @@ namespace SeleniumWebdriver.Testscript.DataDriven
         
         [TestMethod]
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", @"D:\Git\SeleniumWebdriver\DataFiles\CreateData.csv", "CreateData#csv", DataAccessMethod.Sequential)]
-        public void CreateABug()
+        public void CreateABugCSV()
+        {
+            NavigationHelper.NavigationToURL(ObjectRepository.Config.GetWebsite());
+            HomePage hPage = new HomePage(ObjectRepository.Driver);
+            LoginPage loginPage = hPage.NavigateToLogin();
+            BugDetail bugDetail = loginPage.LoginToPage(ObjectRepository.Config.GetUsername(), ObjectRepository.Config.GetPassword());
+            bugDetail.SelectDropdownList(TestContext.DataRow["Severity"].ToString(), TestContext.DataRow["HardWare"].ToString(), TestContext.DataRow["OS"].ToString());
+            bugDetail.FillInTextbox(TestContext.DataRow["Summary"].ToString(), TestContext.DataRow["Desc"].ToString());
+            bugDetail.SubmitBug();
+            hPage = bugDetail.Logout();
+        }
+
+        [TestMethod]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML", @"D:\Git\SeleniumWebdriver\DataFiles\TestData.xml", "Row", DataAccessMethod.Sequential)]
+        public void CreateABugXML()
+        {
+            NavigationHelper.NavigationToURL(ObjectRepository.Config.GetWebsite());
+            HomePage hPage = new HomePage(ObjectRepository.Driver);
+            LoginPage loginPage = hPage.NavigateToLogin();
+            BugDetail bugDetail = loginPage.LoginToPage(ObjectRepository.Config.GetUsername(), ObjectRepository.Config.GetPassword());
+            bugDetail.SelectDropdownList(TestContext.DataRow["Severity"].ToString(), TestContext.DataRow["HardWare"].ToString(), TestContext.DataRow["OS"].ToString());
+            bugDetail.FillInTextbox(TestContext.DataRow["Summary"].ToString(), TestContext.DataRow["Desc"].ToString());
+            bugDetail.SubmitBug();
+            hPage = bugDetail.Logout();
+        }
+        [TestMethod]
+        [DataSource("System.Data.Odbc", @"Dsn=Excel Files;dbq=D:\Git\SeleniumWebdriver\DataFiles\DataForBug.xlsx;", "TestExcelData$", DataAccessMethod.Sequential)]
+        public void CreateABugXcel()
         {
             NavigationHelper.NavigationToURL(ObjectRepository.Config.GetWebsite());
             HomePage hPage = new HomePage(ObjectRepository.Driver);

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Rows>
+	<Row>
+		<Severity>blocker</Severity>
+		<HardWare>Other</HardWare>
+		<OS>Linux</OS>
+		<Summary>Summary One</Summary>
+		<Desc>Desc One</Desc>
+	</Row>
+	<Row>
+		<Severity>major</Severity>
+		<HardWare>Macintosh</HardWare>
+		<OS>Other</OS>
+		<Summary>Summary Two</Summary>
+		<Desc>Desc Two</Desc>
+	</Row>
+	<Row>
+		<Severity>normal</Severity>
+		<HardWare>All</HardWare>
+		<OS>All</OS>
+		<Summary>Summary Three</Summary>
+		<Desc>Desc Three</Desc>
+	</Row>
+</Rows>
