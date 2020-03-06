@@ -20,3 +20,9 @@ D:\Git\SeleniumWebdriver\obj\Debug\SeleniumWebdriver.csproj.CopyComplete
 D:\Git\SeleniumWebdriver\obj\Debug\SeleniumWebdriver.dll
 D:\Git\SeleniumWebdriver\obj\Debug\SeleniumWebdriver.pdb
 D:\Git\SeleniumWebdriver\obj\Debug\SeleniumWebdriver.csproj.CoreCompileInputs.cache
+D:\Git\SeleniumWebdriver\bin\Debug\ExcelDataReader.DataSet.dll
+D:\Git\SeleniumWebdriver\bin\Debug\ExcelDataReader.dll
+D:\Git\SeleniumWebdriver\bin\Debug\ExcelDataReader.pdb
+D:\Git\SeleniumWebdriver\bin\Debug\ExcelDataReader.xml
+D:\Git\SeleniumWebdriver\bin\Debug\ExcelDataReader.DataSet.pdb
+D:\Git\SeleniumWebdriver\bin\Debug\ExcelDataReader.DataSet.xml
