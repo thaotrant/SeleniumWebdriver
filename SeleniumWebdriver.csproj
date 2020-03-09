@@ -87,6 +87,7 @@
     <Compile Include="Configuration\BrowserType.cs" />
     <Compile Include="Configuration\XmlReader.cs" />
     <Compile Include="CustomException\NoSuitableDriverFound.cs" />
+    <Compile Include="ExcelReader\ExcelReaderHelper.cs" />
     <Compile Include="ExcelReader\TestExcelReader.cs" />
     <Compile Include="PageObject\BugDetail.cs" />
     <Compile Include="PageObject\HomePage.cs" />

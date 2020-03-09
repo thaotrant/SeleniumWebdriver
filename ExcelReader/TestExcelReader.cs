@@ -16,16 +16,20 @@ namespace SeleniumWebdriver.ExcelReader
         [TestMethod]
         public void TestReadExcel()
         {
-            FileStream stream = new FileStream(@"D:\Git\SeleniumWebdriver\DataFiles\Data.xlsx", FileMode.Open, FileAccess.Read);
-            IExcelDataReader reader = ExcelReaderFactory.CreateOpenXmlReader(stream);
-            DataTable table = reader.AsDataSet().Tables["Bugzilla"];
-            for (int i = 0; i < table.Rows.Count; i++)
-            {
-                for (int j = 0; j < table.Rows[i].ItemArray.Length; j++)
-                {
-                    Console.WriteLine($"Data: {table.Rows[i][j]}");
-                }
-            }            
+            //FileStream stream = new FileStream(@"D:\Git\SeleniumWebdriver\DataFiles\Data.xlsx", FileMode.Open, FileAccess.Read);
+            //IExcelDataReader reader = ExcelReaderFactory.CreateOpenXmlReader(stream);
+            //DataTable table = reader.AsDataSet().Tables["Bugzilla"];
+            //for (int i = 0; i < table.Rows.Count; i++)
+            //{
+            //    for (int j = 0; j < table.Rows[i].ItemArray.Length; j++)
+            //    {
+            //        Console.WriteLine($"Data: {table.Rows[i][j]}");
+            //    }
+            //}   
+            string xlPath = @"D:\Git\SeleniumWebdriver\DataFiles\Data.xlsx";
+            Console.WriteLine(ExcelReaderHelper.GetCellData(xlPath, "Bugzilla", 1, 0));           
+            Console.WriteLine(ExcelReaderHelper.GetCellData(xlPath, "Bugzilla", 1, 1));
+            Console.WriteLine(ExcelReaderHelper.GetCellData(xlPath, "Bugzilla", 1, 2));
         }
     }
 }
