@@ -26,5 +26,6 @@ namespace SeleniumWebdriver.ComponentHelper
             element.Clear();
             element.SendKeys(text);
         }
+
     }
 }
