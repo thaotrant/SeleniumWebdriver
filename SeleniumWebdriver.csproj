@@ -86,9 +86,11 @@
     <Compile Include="Configuration\AppConfigReader.cs" />
     <Compile Include="Configuration\BrowserType.cs" />
     <Compile Include="Configuration\XmlReader.cs" />
+    <Compile Include="CustomException\NoSuchKeywordException.cs" />
     <Compile Include="CustomException\NoSuitableDriverFound.cs" />
     <Compile Include="ExcelReader\ExcelReaderHelper.cs" />
     <Compile Include="ExcelReader\TestExcelReader.cs" />
+    <Compile Include="Keyword\DataEngine.cs" />
     <Compile Include="PageObject\BugDetail.cs" />
     <Compile Include="PageObject\HomePage.cs" />
     <Compile Include="PageObject\LoginPage.cs" />
