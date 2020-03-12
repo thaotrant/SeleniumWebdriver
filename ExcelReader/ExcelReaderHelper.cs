@@ -19,9 +19,10 @@ namespace SeleniumWebdriver.ExcelReader
         {
             _cache = new Dictionary<string, IExcelDataReader>();
         }
-        public static object GetCellData(string xlPath, string sheetName, int row, int column)
+
+        private static IExcelDataReader GetExcelReader(string xlPath, string sheetName)
         {
-            if(_cache.ContainsKey(sheetName))
+            if (_cache.ContainsKey(sheetName))
             {
                 reader = _cache[sheetName];
             }
@@ -31,9 +32,19 @@ namespace SeleniumWebdriver.ExcelReader
                 reader = ExcelReaderFactory.CreateOpenXmlReader(fileStream);
                 _cache.Add(sheetName, reader);
             }
-            DataTable table = reader.AsDataSet().Tables[sheetName];
+            return reader;
+        }
+        public static object GetCellData(string xlPath, string sheetName, int row, int column)
+        {
+            IExcelDataReader _reader = GetExcelReader(xlPath, sheetName);
+            DataTable table = _reader.AsDataSet().Tables[sheetName];
             //return table.Rows[row][column].ToString();
             return GetData(table.Rows[row][column].GetType(), table.Rows[row][column]);
+        }
+        public static int GetTotalExcelColumns(string xlPath, string sheetName)
+        {
+            IExcelDataReader _reader = GetExcelReader(xlPath, sheetName);
+            return reader.AsDataSet().Tables[sheetName].Rows.Count;
         }
         private static object GetData(Type type, object data)
         {
