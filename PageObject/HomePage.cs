@@ -27,8 +27,7 @@ namespace SeleniumWebdriver.PageObject
         //private By quickSearchBox = By.Id("quicksearch_top");
         //private By searchButton = By.Id("find_top");
         //private By fileABugLink = By.LinkText("File a Bug");
-        //private By searchLink = By.CssSelector(".bz_common_actions #query");
-        private By by = By.
+        //private By searchLink = By.CssSelector(".bz_common_actions #query");        
         #endregion
 
         public HomePage(IWebDriver driver) : base(driver) 

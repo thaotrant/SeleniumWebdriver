@@ -91,6 +91,7 @@
     <Compile Include="ExcelReader\ExcelReaderHelper.cs" />
     <Compile Include="ExcelReader\TestExcelReader.cs" />
     <Compile Include="Keyword\DataEngine.cs" />
+    <Compile Include="Keyword\TestKeywordDriven.cs" />
     <Compile Include="PageObject\BugDetail.cs" />
     <Compile Include="PageObject\HomePage.cs" />
     <Compile Include="PageObject\LoginPage.cs" />

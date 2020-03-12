@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using SeleniumWebdriver.ComponentHelper;
 using SeleniumWebdriver.CustomException;
+using SeleniumWebdriver.ExcelReader;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace SeleniumWebdriver.Keyword
         private readonly int _locatorValueCol;
         private readonly int _parameterCol;
 
-        public DataEngine(int keywordCol, int locatorTypeCol, int locatorValueCol, int parameterCol)
+        public DataEngine(int keywordCol = 2, int locatorTypeCol = 3, int locatorValueCol = 4, int parameterCol = 5)
         {
             this._keywordCol = keywordCol;
             this._locatorTypeCol = locatorTypeCol;
@@ -66,10 +67,22 @@ namespace SeleniumWebdriver.Keyword
                     break;
                 case "WaitForEle":
                     GenericHelpers.WaitForElementInPage(GetElementLocator(locatorType, locatorValue),
-                        TimeSpan.FromMilliseconds(100));
+                        TimeSpan.FromSeconds(60));
                     break;                
                 default:
                     throw new NoSuchKeywordException("No such keyword found" + keyword);                    
+            }
+        }
+        public void ExecuteScripts(string xlPath, string sheetName)
+        {
+            int totalRows = ExcelReaderHelper.GetTotalExcelColumns(xlPath, sheetName);
+            for (int i = 1; i < totalRows; i++)
+            {
+                var keyword = ExcelReaderHelper.GetCellData(xlPath, sheetName, i, _keywordCol).ToString();
+                var locatorType = ExcelReaderHelper.GetCellData(xlPath, sheetName, i, _locatorTypeCol).ToString();
+                var locatorVal = ExcelReaderHelper.GetCellData(xlPath, sheetName, i, _locatorValueCol).ToString();
+                var para = ExcelReaderHelper.GetCellData(xlPath, sheetName, i, _parameterCol).ToString();
+                PerformActions(keyword, locatorType, locatorVal, para);
             }
         }
     }
