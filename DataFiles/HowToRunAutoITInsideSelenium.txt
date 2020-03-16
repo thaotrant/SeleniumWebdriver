@@ -1,0 +1,6 @@
+1. Object to ProcessStartInfo class
+	Name
+	Argument
+	Demon
+
+	Start -> Process

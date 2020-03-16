@@ -101,6 +101,7 @@
     <Compile Include="Testscript\DataDriven\TestCreateBug.cs" />
     <Compile Include="Testscript\DefaultWait\HandleDefaultWait.cs" />
     <Compile Include="Testscript\DropdownListHandle\DropdownListHandle.cs" />
+    <Compile Include="Testscript\FileUpload\TestFileUploadAction.cs" />
     <Compile Include="Testscript\HandleButton\HandleButton.cs" />
     <Compile Include="Testscript\HyperLinks\TestHyperLinks.cs" />
     <Compile Include="Interfaces\IConfig.cs" />

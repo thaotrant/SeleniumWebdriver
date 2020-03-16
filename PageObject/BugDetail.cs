@@ -30,6 +30,12 @@ namespace SeleniumWebdriver.PageObject
         [FindsBy(How = How.Id, Using = "comment")]
         private IWebElement descriptionTextbox;
 
+        [FindsBy(How = How.CssSelector, Using = "#attachment_false input")]
+        private IWebElement AddAnAttachmentButton;
+
+        [FindsBy(How = How.Id, Using = "data")]
+        private IWebElement ChooseFileButton;
+
         [FindsBy(How = How.Id, Using = "commit")]
         private IWebElement submitButton;
        
@@ -68,7 +74,18 @@ namespace SeleniumWebdriver.PageObject
                 TextBoxHelper.TypeInTextbox(descriptionTextbox, description);
             }
         }
-        
+
+        public void AttachmentClick()
+        {
+            AddAnAttachmentButton.Click();
+            GenericHelpers.WaitForElementInPage(By.Id("data"), TimeSpan.FromSeconds(30));
+        }
+
+        public void ChooseFileClick()
+        {
+            ChooseFileButton.Click();           
+        }
+
         public void SubmitBug()
         {
             submitButton.Click();
