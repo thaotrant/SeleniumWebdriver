@@ -6,23 +6,23 @@
 $count = 0
 Sleep(3000)
 While $count <> 10
+   $firefox = WinActivate("File Upload")
    $chrome = WinActivate("Open")
-   $filefox = WinActivate("File Upload")
-   If($chrome <> 0) Then
-	  ControlFocus("Open", "", "Edit1")
+   If $firefox <> 0 Then
+	  ControlFocus("File Upload","","Edit1")
 	  Sleep(500)
-	  ControlSetText("Open", "", "Edit1", $CmdLine[1])
+	  ControlSetText("File Upload","","Edit1",$CmdLine[1])
 	  Sleep(500)
-	  ControlClick("Open", "", "Button1")
+	  ControlClick("File Upload","","Button1")
 	  Exit
-      ElseIf ($firefox <> 0) Then
-	  ControlFocus("File Upload", "", "Edit1")
+   ElseIf $chrome <> 0 Then
+	  ControlFocus("Open","","Edit1")
 	  Sleep(500)
-	  ControlSetText("File Upload", "", "Edit1", $CmdLine[1])
+	  ControlSetText("Open","","Edit1",$CmdLine[1])
 	  Sleep(500)
-	  ControlClick("File Upload", "", "Button1")
+	  ControlClick("Open","","Button1")
 	  Exit
    EndIf
    Sleep(1000)
-   $count = $count + 1
+   $count  = $count + 1
 WEnd

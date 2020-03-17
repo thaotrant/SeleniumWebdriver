@@ -29,17 +29,21 @@ namespace SeleniumWebdriver.Testscript.FileUpload
             IJavaScriptExecutor executor = ((IJavaScriptExecutor)ObjectRepository.Driver);
             executor.ExecuteScript("arguments[0].click();", ObjectRepository.Driver.FindElement(By.Id("data")));
 
-            var fileToUploadPath = @"D:\Git\SeleniumWebdriver\DataFiles\Data.xlsx";
+            var fileToUploadPath = @"Desktop\Phim_tat_chrome.png";
+                //@"D:\Git\SeleniumWebdriver\DataFiles\Data.xlsx";
             ProcessStartInfo processInfo = new ProcessStartInfo()
             {
-                FileName = @"D:\Git\SeleniumWebdriver\AutoITScripts\FileUpload.exe",
-                Arguments = fileToUploadPath;
-            };            
-            Process process = Process.Start(processInfo);
-            process.WaitForExit();
-            process.Close();
+                //FileName = @"D:\Git\SeleniumWebdriver\AutoITScripts\FileUpload.exe",
+                FileName = @"D:\Learning coding\BDD_Specflow\FileUpload\FileUpload.exe",
+                Arguments = fileToUploadPath,
+                UseShellExecute = false
+        };            
+            using (var process = Process.Start(processInfo))
+            {
+                process.WaitForExit();
+            }      
 
-            Thread.Sleep(1000);
+            Thread.Sleep(5000);
         }
     }
 }

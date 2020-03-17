@@ -88,8 +88,7 @@ namespace SeleniumWebdriver.BaseClasses
         {
             if (ObjectRepository.Driver != null)
             {
-                ObjectRepository.Driver.Close();
-                ObjectRepository.Driver.Quit();
+                ObjectRepository.Driver.Close();                                                                                                                                                                                                                                                                                                                                                 ObjectRepository.Driver.Quit();
             }
         }
     }
